@@ -4,7 +4,7 @@ This repository is the official implementation of [Generative Diffusion Models f
 
 <center>
 
-**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](https://arxiv.org/abs/2106.06) | [Homepage](https://github.com/pengzhangzhi/ab_opt_homepage/) |**
+**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](https://arxiv.org/abs/2106.06) | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
 
 </center>
 
