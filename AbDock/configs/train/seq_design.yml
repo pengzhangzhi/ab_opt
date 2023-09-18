@@ -1,0 +1,73 @@
+model:
+  type: diffab
+  resolution: backbone+CB
+  res_feat_dim: 128
+  pair_feat_dim: 64
+  diffusion:
+    num_steps: 100
+    eps_net_opt:
+      num_layers: 6
+    obj: pred_x0
+  train_structure: false
+  train_sequence: true
+  initial_patch_size: 0
+  antigen_size: 20
+  remove_anchor: true
+  num_bins: 40
+  dist_min: 0.5
+  dist_max: 19.5
+
+train:
+  loss_weights:
+    rot: 1.0
+    pos: 1.0
+    seq: 1.0
+    dist: 1.0
+    prmsd: 0.1
+  max_iters: 300_000
+  val_freq: 1000
+  batch_size: 16
+  seed: 2022
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 10
+    min_lr: 5.e-6
+
+dataset:
+  train:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: train
+    transform:
+    - type: mask_single_cdr
+    - type: merge_chains
+    - type: patch_around_anchor
+      initial_patch_size: "{model.initial_patch_size}"
+      antigen_size: "{model.antigen_size}"
+      remove_anchor: "{model.remove_anchor}"
+      dist_cutoff: 12.0
+
+  val:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: val
+    transform:
+    - type: mask_single_cdr
+      selection: CDR3
+    - type: merge_chains
+    - type: patch_around_anchor
+      initial_patch_size: "{model.initial_patch_size}"
+      antigen_size: "{model.antigen_size}"
+      remove_anchor: "{model.remove_anchor}"

@@ -1,0 +1,19 @@
+mode: multiple_cdrs
+
+sampling:
+  seed: 2022
+  sample_structure: true
+  sample_sequence: false
+  cdrs:
+    - H_CDR1
+    - H_CDR2
+    - H_CDR3
+
+
+dataset:
+  test:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: dock_test

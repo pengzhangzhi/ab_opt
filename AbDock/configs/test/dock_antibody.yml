@@ -1,0 +1,16 @@
+mode: dock_antibody
+
+sampling:
+  seed: 2022
+  sample_structure: true
+  sample_sequence: false
+  antibody_chains: 
+    - heavy
+
+dataset:
+  test:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: dock_test

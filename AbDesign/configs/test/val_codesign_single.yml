@@ -1,0 +1,20 @@
+mode: single_cdr
+model:
+  checkpoint: ./trained_models/codesign_single.pt
+antigen_size: 128
+initial_patch_size: 128
+sampling:
+  seed: 2022
+  sample_structure: true
+  sample_sequence: true
+  cdrs:
+    - H_CDR3
+  num_samples: 100
+
+dataset:
+  test:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: val

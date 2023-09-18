@@ -1,0 +1,24 @@
+mode: single_cdr
+model:
+  checkpoint: trained_models/ckpt.pt
+antigen_size: 60
+initial_patch_size: 60
+max_nb_hotspots: 0
+hydropathy: true
+charge: true
+drop_prob: 1.0
+sampling:
+  seed: 2022
+  sample_structure: true
+  sample_sequence: true
+  cdrs:
+    - H_CDR3
+  num_samples: 10
+
+dataset:
+  test:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: test

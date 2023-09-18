@@ -1,0 +1,71 @@
+model:
+  type: diff_gnn
+  res_feat_dim: 128
+  edge_feat_dim: 128
+  hidden_size: 128
+  num_steps: 500
+  num_atoms: 3
+  n_layers: 6
+  dropout: 0.1
+  self_condition: false
+  hotspot: true
+
+train:
+  loss_weights:
+    rot: 1.0
+    pos: 1.0
+    seq: 1.0
+  max_iters: 350_000
+  val_freq: 1000
+  batch_size: 16
+  seed: 2022
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 10
+    min_lr: 5.e-6
+
+dataset:
+  train:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: train
+    transform:
+    - type: filter_structure
+      must_have_antigen: true
+      must_have_heavy: true
+    - type: mask_single_cdr
+      selection: H_CDR3
+    - type: merge_chains
+    - type: patch_around_anchor
+      antigen_size: 120
+      initial_patch_size: 12
+      max_nb_hotspots: 1
+  val:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: val
+
+
+mode: single_cdr
+antigen_size: 60
+initial_patch_size: 60
+max_nb_hotspots: 1
+sampling:
+  seed: 2022
+  sample_structure: true
+  sample_sequence: true
+  cdrs:
+    - H_CDR3
+  num_samples: 4
