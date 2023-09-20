@@ -1,12 +1,10 @@
-### Generative Diffusion Models for Antibody Design, Docking, and Optimization
-
-This repository is the official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization](https://arxiv.org/abs/2106.06660).
-
-<center>
+## Generative Diffusion Models for Antibody Design, Docking, and Optimization
 
 **| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](https://arxiv.org/abs/2106.06) | [Homepage](https://github.com/pengzhangzhi/ab_opt_homepage/) |**
 
-</center>
+Official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization]().
+
+
 
 
 ![Cover Image](cover.png)
@@ -18,7 +16,7 @@ This repository is the official implementation of [Generative Diffusion Models f
 git clone git@github.com:pengzhangzhi/ab_opt.git
 ```
 ### AbDesign
-Please refer to the [AbDesign](./AbDesign/) on how to reproduce the training and evaluation of the AbDesign.
+Please take a look at the [AbDesign](./AbDesign/) on reproducing the training and evaluation of the AbDesign.
 ### AbDock
 
-Please refer to the [AbDock](./AbDock/) on how to reproduce the training and evaluation of the AbDock and the antibody optimization pipeline.
+Please take a look at the [AbDock](./AbDock/) on reproducing the training and evaluation of the AbDock and the antibody optimization pipeline.
