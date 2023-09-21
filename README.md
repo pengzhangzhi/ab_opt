@@ -22,3 +22,11 @@ Please refer to the [AbDesign](./AbDesign/) on how to reproduce the training and
 ### AbDock
 
 Please refer to the [AbDock](./AbDock/) on how to reproduce the training and evaluation of the AbDock and the antibody optimization pipeline.
+
+## Credits <a name = "credits"></a>
+This codebase is based on the following repositories, we thank the authors for their great work.
+- [DockQ](https://github.com/bjornwallner/DockQ)
+- [diffab](https://github.com/luost26/diffab)
+- [Abnumber](https://github.com/prihoda/AbNumber)
+- [PyRosetta](https://www.pyrosetta.org/)
+- ...

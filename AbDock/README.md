@@ -80,10 +80,3 @@ python train.py configs/train/dock_single.yml
 ```
 - Please refer to `train.py` for complete arguments. 
 - Please check out `configs/train` for the list of training setting.
-## Credits <a name = "credits"></a>
-This codebase is based on the following repositories, we thank the authors for their great work.
-- [DockQ](https://github.com/bjornwallner/DockQ)
-- [diffab](https://github.com/luost26/diffab)
-- [Abnumber](https://github.com/prihoda/AbNumber)
-- [PyRosetta](https://www.pyrosetta.org/)
-- ...
