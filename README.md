@@ -1,6 +1,9 @@
 ## Generative Diffusion Models for Antibody Design, Docking, and Optimization
 
-**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](Generative_Diffusion_Models_for_Antibody_Design__Docking__and_Optimization.pdf) | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
+<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+
+**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper]() | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
+
 
 Official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization]().
 
