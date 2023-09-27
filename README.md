@@ -2,7 +2,7 @@
 
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 
-**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper]() | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
+**| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](https://www.biorxiv.org/content/10.1101/2023.09.25.559190v1) | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
 
 
 Official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization]().
