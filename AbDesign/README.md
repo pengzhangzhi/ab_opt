@@ -29,26 +29,6 @@ Results are saved in `./test_results` folder.
 We provide additional functionality to specify the amino acid properties of the designed sequences.
 Specify amino acid labels such as hydrophobicity and charge, run
 
-```bash
-python design_testset.py --hydropathy_spec 1=+ --charge_spec 2=-
-``` 
-- The syntax is `position=label`. where `1` and `2` are the positions of the amino acid in the sequence, and `+` and `-` are the labels. The symbols are defined as follows. 
-```python
-char2hydropathy = {
-    '+': Hydropathy.hydrophilic,
-    '-': Hydropathy.moderate,
-    '?': Hydropathy.unknown,
-}
-char2charge = {
-    '+': Charge.positive,
-    '-': Charge.negtive,
-    '=': Charge.neutral,
-    '?': Charge.unknown,
-}
-```
-- Multiple labels can be specified by separating them with space, e.g., `python design_testset.py --hydropathy_spec 1=+ 2=- --charge_spec 3=+ 4=-`
-
-
 ## Train
 
 ```bash
