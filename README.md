@@ -5,9 +5,9 @@
 **| [Code](https://github.com/pengzhangzhi/ab_opt) | [Paper](https://www.biorxiv.org/content/10.1101/2023.09.25.559190v1) | [Homepage](https://pengzhangzhi.github.io/ab_opt_homepage/) |**
 
 
-Official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization]().
+Official implementation of [Generative Diffusion Models for Antibody Design, Docking, and Optimization](https://www.biorxiv.org/content/10.1101/2023.09.25.559190v1).
 
-
+The wet experiment data used to validate our pipeline is available at [wet_experiment_data.zip](./wet_experiment_data.zip)
 
 
 ![Cover Image](cover.png)
