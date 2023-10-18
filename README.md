@@ -18,10 +18,17 @@ The wet experiment data used to validate our pipeline is available at [wet_exper
 ```bash
 git clone git@github.com:pengzhangzhi/ab_opt.git
 ```
+
+### Interested in running the **antibody optimization pipeline**?
+- Go the [AbDock](./AbDock/) 
+- Follow the README to install the env
+- Open notebook [ab_opt.ipynb](AbDock/ab_opt.ipynb)
+- specify pdb file which contains an antibody-antigen complex structure
+- specify the heavy chain ID and the residue indices to be designed
+
 ### AbDesign
 Please take a look at the [AbDesign](./AbDesign/) on reproducing the training and evaluation of the AbDesign.
 ### AbDock
-
 Please refer to the [AbDock](./AbDock/) on how to reproduce the training and evaluation of the AbDock and the antibody optimization pipeline.
 
 ## Credits <a name = "credits"></a>
