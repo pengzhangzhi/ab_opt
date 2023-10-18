@@ -51,7 +51,7 @@ def summarize_seqs(design_dir):
     return out_df
 
 def gen_poses(native_path, out_dir, nums, checkpoint_path):
-    cmd = f'python dock_pdb.py --pdb_path {native_path} -c configs/test/dock_design_single.yml\
+    cmd = f'python dock_pdb.py --pdb_path {native_path} -c configs/test/dock_cdr.yml\
                 -ck {checkpoint_path} -o {out_dir} -n {nums} -b {nums}\
                    '
     print(cmd)
@@ -65,7 +65,7 @@ def dock_seqs(design_dir, out_dir, nums, heavy_chain_id, checkpoint_path, pdb_su
     """
     @ray.remote(num_gpus=1/args.process_per_gpu, num_cpus=1)
     def dock_seq(path, id):
-        cmd = f'python dock_pdb.py --id {id} --pdb_path {path} -c configs/test/dock_design_single.yml\
+        cmd = f'python dock_pdb.py --id {id} --pdb_path {path} -c configs/test/dock_cdr.yml\
                 -ck {checkpoint_path} -o {out_dir} -n {nums} -b {nums}\
                     --heavy {heavy_chain_id} --label_heavy_as_cdr'
         print(cmd)
