@@ -98,6 +98,7 @@ if __name__ == '__main__':
     parser.add_argument('--heavy_chain_id', type=str, default='A', help='Heavy chain ID')
     parser.add_argument('--nums', type=int, default=100, help='Number of sequences')
     parser.add_argument('--pdb_suffix', type=str, default='rosetta', help='PDB suffix')
+    parser.add_argument('--no_rosetta', action='store_true', help='No rosetta')
 
     args = parser.parse_args()
     os.makedirs(args.seq_design_dir, exist_ok=True)
@@ -105,18 +106,19 @@ if __name__ == '__main__':
     
     ray.init(num_gpus=args.num_gpus)
     
-    
-    # run rosetta relax
-    relax_main(EasyDict({
+    if not args.no_rosetta:
+
+        # run rosetta relax
+        relax_main(EasyDict({
+                'root': os.path.dirname(args.docked_pose_dir),
+                "pipeline":pipeline_openmm_pyrosetta
+        }))
+        # run rosetta ddg estimation
+        eval_main(args=EasyDict({
             'root': os.path.dirname(args.docked_pose_dir),
-            "pipeline":pipeline_openmm_pyrosetta
-    }))
-    # run rosetta ddg estimation
-    eval_main(args=EasyDict({
-        'root': os.path.dirname(args.docked_pose_dir),
-        'pfx': 'rosetta',
-        'no_energy':False,
-    }))
+            'pfx': 'rosetta',
+            'no_energy':False,
+        }))
 
     
     seq_design_batch(
