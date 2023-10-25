@@ -30,7 +30,12 @@ The wet experiment data used to validate our pipeline is available at [wet_exper
 git clone git@github.com:pengzhangzhi/ab_opt.git
 ```
 
-### Interested in running the **antibody optimization pipeline**?
+### **Antibody optimization pipeline**
+
+#### want to use it online? Check out the [colab](https://drive.google.com/file/d/1vTNZAl_eJ63vruC4Mkq8t6nr8lwvoaIh/view?usp=sharing) version of the **antibody optimization pipeline**.
+
+#### Running the pipeline in local
+- `git clone git@github.com:pengzhangzhi/ab_opt.git`
 - Go the [AbDock](./AbDock/) 
 - Follow the README to install the env
 - Open notebook [ab_opt.ipynb](AbDock/ab_opt.ipynb)
